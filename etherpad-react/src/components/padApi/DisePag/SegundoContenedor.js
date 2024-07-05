@@ -1,5 +1,5 @@
 import React from 'react';
-import "../css/disepag.css";
+import "../disepag.scss";
 
 const SegundoContenedor = ({ children }) => {
   return (
