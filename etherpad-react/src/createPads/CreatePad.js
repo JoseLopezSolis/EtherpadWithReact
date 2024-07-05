@@ -18,11 +18,12 @@ export default function CreatePad() {
 
   const crearPad = async () => {
     const ETHERPAD_API_URL = 'http://localhost:9001/api/1';
-    const API_KEY = '4166c1c788515d29372e6e017937c63ab85843626341000fc9402d8da6ccd221'; // Cambia tu API KEY
+    const API_KEY = '311ea29fe4a4ae8b9bdcae5e9341717a2b3173edaa12e5def1ceeb67b7a75f19'; // Cambia tu API KEY
 
     try {
       const url = `${ETHERPAD_API_URL}/createPad?padID=${PadId}&apikey=${API_KEY}`;
       await axios.post(url);
+      console.log("Se ah creado el pad " + PadId + " exitosamente")
     } catch (error) {
       console.error('Error al crear el archivo:', error);
     }
@@ -59,7 +60,7 @@ export default function CreatePad() {
             <button className="close-button" onClick={handleClose}>
                 <FontAwesomeIcon icon={faTimes} />
             </button>
-            <form  className='formulario' onSubmit={handleSubmit}>
+            <form className='formulario' onSubmit={handleSubmit}>
               <h2>Crear pad</h2>
               <input
                 type="text"
@@ -94,8 +95,8 @@ export default function CreatePad() {
             <div className="icon-wrapper">
               <FontAwesomeIcon icon={faPencilAlt} onClick={() => {}} />
             </div>
-            <div className="icon-wrapper">
-              <FontAwesomeIcon icon={faPlus} onClick={handleCrear} />
+            <div className="icon-wrapper" onClick={handleCrear}>
+              <FontAwesomeIcon icon={faPlus} />
             </div>
             <div className="icon-wrapper" onClick={() => {}}>
               <FontAwesomeIcon icon={faTrash} />
