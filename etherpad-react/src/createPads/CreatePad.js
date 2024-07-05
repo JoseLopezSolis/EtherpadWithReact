@@ -23,7 +23,7 @@ export default function CreatePad() {
     try {
       const url = `${ETHERPAD_API_URL}/createPad?padID=${PadId}&apikey=${API_KEY}`;
       await axios.post(url);
-      console.log("Se ah creado el pad " + PadId + " exitosamente")
+      console.log("Se ah creado el pad " + PadId + "exitosamente")
     } catch (error) {
       console.error('Error al crear el archivo:', error);
     }
@@ -69,7 +69,7 @@ export default function CreatePad() {
                 placeholder="Ingresa el nombre del Pad"
               />
               <div>
-                <button className='submit-button' type="submit">Enviar</button>
+                <button className='submit-button' type="submit">Crear</button>
               </div>
             </form>
           </div>
